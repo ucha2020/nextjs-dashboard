@@ -27,6 +27,7 @@ yarn-error.log*
 # local env files
 .env*.local
 .env
+.envdd
 
 # vercel
 .vercel
@@ -35,3 +36,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 validator.ts
+/generated/prisma
+
+/generated/prisma
+
+/generated/prisma
+
+/app/generated/prisma
+
+/app/generated/prisma
+
+/generated/prisma
