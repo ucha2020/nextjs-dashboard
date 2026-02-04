@@ -8,7 +8,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@prisma/adapter-pg": "^7.2.0",
-    "@prisma/client": "^7.2.0",
+    "@prisma/client": "^7.3.0",
     "@tailwindcss/forms": "^0.5.10",
     "autoprefixer": "10.4.20",
     "bcrypt": "^5.1.1",
@@ -32,8 +32,9 @@
     "@types/pg": "^8.16.0",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
+    "baseline-browser-mapping": "^2.9.19",
     "dotenv": "^17.2.3",
-    "prisma": "^7.2.0",
+    "prisma": "^7.3.0",
     "tsx": "^4.21.0"
   },
   "pnpm": {
