@@ -1,23 +1,21 @@
 
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 -- CreateTable
 CREATE TABLE "customers" (
-    "id" SERIAL NOT NULL,
+    "id" UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     "name" VARCHAR(255) NOT NULL,
     "email" VARCHAR(255) NOT NULL,
-    "image_url" VARCHAR(255) NOT NULL,
+    "image_url" VARCHAR(255) NOT NULL
 
-    CONSTRAINT "customers_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "invoices" (
-    "id" SERIAL NOT NULL,
-    "customer_id" UUID NOT NULL,
+    "id" SERIAL NOT NULL PRIMARY KEY,
+    "customer_id" UUID NOT NULL REFERENCES customers(id),
     "amount" INTEGER NOT NULL,
     "status" VARCHAR(255) NOT NULL,
-    "date" DATE NOT NULL,
-
-    CONSTRAINT "invoices_pkey" PRIMARY KEY ("id")
+    "date" DATE NOT NULL
 );
 
 -- CreateTable
@@ -28,12 +26,11 @@ CREATE TABLE "revenue" (
 
 -- CreateTable
 CREATE TABLE "users" (
-    "id" SERIAL NOT NULL,
+    "id" UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     "name" VARCHAR(255) NOT NULL,
     "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
+    "password" TEXT NOT NULL
 
-    CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
